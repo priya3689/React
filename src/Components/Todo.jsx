@@ -6,42 +6,61 @@ function Todo() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
  
-  const handleDelete = (index) => {
-  //  setTodos( todos.filter((x) => {
-  //     return index !== x.id;
-  //   }));
-  console.log("Before Delete" ,todos);
- const filteredTodos = todos.filter((x) => {
-     return index !== x.id
-  });
-  console.log("Filtered Todos",filteredTodos);
-  setTodos([...filteredTodos]);
+//   const handleDelete = (index) => {
+//   //  setTodos( todos.filter((x) => {
+//   //     return index !== x.id;
+//   //   }));
+//   console.log("Before Delete" ,todos);
+//  const filteredTodos = todos.filter((x) => {
+//      return index !== x.id
+//   });
+//   console.log("Filtered Todos",filteredTodos);
+//   setTodos([...filteredTodos]);
   
-  console.log("After delete",todos);
-    setTodo("")
-  };
-  const addTodos = () => {
-    setTodos([...todos,{id:Date.now(),text:todo,status:false}])
-    setTodo("")
+//   console.log("After delete",todos);
+//     setTodo("")
+//   };
+const handleDelete = (id) => {
+  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+};
 
-    }
-    // const stausChange=(id,e) => {
+const addTodos = () => {
+  setTodos((prevTodos) => [
+    ...prevTodos,
+    { id: Date.now(), text: todo, status: false },
+  ]);
+  setTodo("");
+};
+
+const stausChange = (id, e) => {
+  setTodos((prevTodos) =>
+    prevTodos.map((todo) =>
+      todo.id === id ? { ...todo, status: e.target.checked } : todo
+    )
+  );
+};
+  // const addTodos = () => {
+  //   setTodos([...todos,{id:Date.now(),text:todo,status:false}])
+  //   setTodo("")
+
+  //   }
+  //   // const stausChange=(id,e) => {
       
-    //   todos.forEach((todo) => {
-    //     if(todo.id===id){
-    //       todo.status=e.target.checked;
+  //   //   todos.forEach((todo) => {
+  //   //     if(todo.id===id){
+  //   //       todo.status=e.target.checked;
           
-    //       }
-    //   })
+  //   //       }
+  //   //   })
       
-    // }
-    const stausChange = (id, e) => {
-      const updatedTodos = todos.map((todo) =>
-        todo.id === id ? { ...todo, status: e.target.checked } : todo
-      );
-      setTodos([...updatedTodos]); // Ensure a new array is created
-      console.log("Todos after status change:", updatedTodos);
-    };
+  //   // }
+  //   const stausChange = (id, e) => {
+  //     const updatedTodos = todos.map((todo) =>
+  //       todo.id === id ? { ...todo, status: e.target.checked } : todo
+  //     );
+  //     setTodos([...updatedTodos]); // Ensure a new array is created
+  //     console.log("Todos after status change:", updatedTodos);
+  //   };
     
     return (
     <div className="app">
