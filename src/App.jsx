@@ -23,8 +23,8 @@ function App() {
   return (
     <div>
       <div>
-        {/* <h3>My Components</h3>
-        <nav>
+        {<h3>My Components</h3>
+        /* <nav>
           <div onClick={() => setActiveComponent(1)}>ToDo</div>
           <div onClick={() => setActiveComponent(0)}>Back to Home</div>
         </nav>
