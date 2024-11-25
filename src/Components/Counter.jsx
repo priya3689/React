@@ -17,27 +17,3 @@ return <div>
 
 export default Counter;
 
-/*
-import { useEffect, useState } from "react";
-import "./Counter.css";
-
-export const Counter = () => {
-  const [data, setData] = useState();
-  const [counter, setCounter] = useState(0);
-
-  //hooks
-  //usestate
-  // useEffect
-
-  useEffect(() => {
-    render(); // component onmound
-
-    return () => {
-      console.log("hello");//component unmount
-    };
-  }, [counter]);//component update
-
-  function getApi() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => respons
-*/
