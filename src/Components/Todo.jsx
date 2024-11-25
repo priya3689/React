@@ -5,64 +5,30 @@ import "./Todo.css";
 function Todo() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
- 
-//   const handleDelete = (index) => {
-//   //  setTodos( todos.filter((x) => {
-//   //     return index !== x.id;
-//   //   }));
-//   console.log("Before Delete" ,todos);
-//  const filteredTodos = todos.filter((x) => {
-//      return index !== x.id
-//   });
-//   console.log("Filtered Todos",filteredTodos);
-//   setTodos([...filteredTodos]);
+
   
-//   console.log("After delete",todos);
-//     setTodo("")
-//   };
-const handleDelete = (id) => {
-  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
-};
+  const handleDelete = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
 
-const addTodos = () => {
-  setTodos((prevTodos) => [
-    ...prevTodos,
-    { id: Date.now(), text: todo, status: false },
-  ]);
-  setTodo("");
-};
+  const addTodos = () => {
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { id: Date.now(), text: todo, status: false },
+    ]);
+    setTodo("");
+  };
 
-const stausChange = (id, e) => {
-  setTodos((prevTodos) =>
-    prevTodos.map((todo) =>
-      todo.id === id ? { ...todo, status: e.target.checked } : todo
-    )
-  );
-};
-  // const addTodos = () => {
-  //   setTodos([...todos,{id:Date.now(),text:todo,status:false}])
-  //   setTodo("")
+  const stausChange = (id, e) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, status: e.target.checked } : todo
+      )
+    );
+  };
 
-  //   }
-  //   // const stausChange=(id,e) => {
-      
-  //   //   todos.forEach((todo) => {
-  //   //     if(todo.id===id){
-  //   //       todo.status=e.target.checked;
-          
-  //   //       }
-  //   //   })
-      
-  //   // }
-  //   const stausChange = (id, e) => {
-  //     const updatedTodos = todos.map((todo) =>
-  //       todo.id === id ? { ...todo, status: e.target.checked } : todo
-  //     );
-  //     setTodos([...updatedTodos]); // Ensure a new array is created
-  //     console.log("Todos after status change:", updatedTodos);
-  //   };
-    
-    return (
+
+  return (
     <div className="app">
       <div className="mainHeading">
         <h1>ToDo List</h1>
@@ -78,10 +44,7 @@ const stausChange = (id, e) => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
         />
-        <i
-          className="fas fa-plus"
-          onClick={addTodos}
-        ></i>
+        <i className="fas fa-plus" onClick={addTodos}></i>
       </div>
       <div className="todos">
         {todos?.map((todoObj, index) => {
@@ -93,10 +56,12 @@ const stausChange = (id, e) => {
                   type="checkbox"
                   name=""
                   id=""
-                  onChange={(e) => stausChange(todoObj.id,e)}
-                  value={todoObj.status}
+                  onChange={(e) => stausChange(todoObj.id, e)}
+                  checked={todoObj.status}
                 />
-                <p>{todoObj.text} - {todoObj.status?"yes":"no"}</p>
+                <p>
+                  {todoObj.text} - {todoObj.status ? "yes" : "no"}
+                </p>
               </div>
               <div className="right">
                 <i
