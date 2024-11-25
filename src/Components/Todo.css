@@ -14,15 +14,16 @@
   padding: 0;
 }
 
-body {
+/* body {
   background-color: #020631;
-}
+} */
 
 .app {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translate(-50%, -10%);
+  background-color: blue;
 }
 
 .app .mainHeading h1 {
