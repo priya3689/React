@@ -1,16 +1,11 @@
 import "./App.css";
 import "./Components/Counter";
 
-import Todo from "./Components/Todo";
+import { RouterProvider } from "react-router-dom";
+import router from "./router/router";
 
 function App() {
-  return (
-    <div>
-      <div>
-        <Todo />
-      </div>
-    </div>
-  );
+  return (<RouterProvider router = {router}/>);
 }
 
 export default App;

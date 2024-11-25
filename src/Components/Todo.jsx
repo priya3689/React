@@ -60,7 +60,7 @@ function Todo() {
                   checked={todoObj.status}
                 />
                 <p>
-                  {todoObj.text} - {todoObj.status ? "yes" : "no"}
+                  {todoObj.text}
                 </p>
               </div>
               <div className="right">
