@@ -1,12 +1,14 @@
 //import React from 'react'
 import { useState } from "react";
 import "./Todo.css";
+import { useNavigate } from "react-router-dom";
+
 
 function Todo() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-  
+  const navigate = useNavigate();
   const handleDelete = (id) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
@@ -73,6 +75,7 @@ function Todo() {
           );
         })}
       </div>
+   <div className="cursor-pointer mt-10" onClick={()=>navigate("/")}>Back to Home</div>
     </div>
   );
 }
