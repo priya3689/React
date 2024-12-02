@@ -75,7 +75,7 @@ function Todo() {
           );
         })}
       </div>
-   <div className="cursor-pointer mt-10" onClick={()=>navigate("/")}>Back to Home</div>
+   <div className="cursor-pointer mt-10" onClick={()=>navigate("./")}>Back to Home</div>
     </div>
   );
 }

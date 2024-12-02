@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 function LoadData(){
     function loadData(){
        fetch(`https://jsonplaceholder.typicode.com/posts`)
@@ -6,6 +7,7 @@ function LoadData(){
        .then(data => setData(data))
        
     }
+    const navigate = useNavigate();
     const[data,setData]=useState([]);
     useEffect(() => loadData(),[]);
     console.log("Data-" +data);
@@ -18,7 +20,8 @@ function LoadData(){
             <div>Title - {item.title}</div>
         </div>)
     })}; 
-  
+     <div className="cursor-pointer mt-10" onClick={()=>navigate("/")}>Back to Home</div>
+
     </div>
  
 
@@ -27,43 +30,4 @@ function LoadData(){
     export default LoadData;
 
 
-  /*  
-    
-    import { useEffect, useState } from "react";
-import "./Counter.css";
-
-export const Counter = () => {
-  const [data, setData] = useState([]);
-  console.log(data, "data");
-
-  //hooks
-  //usestate
-  // useEffect
-
-  useEffect(() => {
-    getApi();
-  }, []);
-
-  function getApi() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => setData(json));
-  }
-
-  return (
-    <div>
-      {data?.map((post, index) => {
-        console.log(index);
-
-        return <div key={post.id}>{post.title} </div>;
-      })}
-    </div>
-  );
-};
-
-    
-    
-    
-    
-    */
-    
+  

@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0
+}
+
+.Form-wrapper {
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 50px auto;
+    width: 380px;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) inset;
+    color: #515354
+}
+
+.Form-wrapper h1 {
+    color: #003145;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.name-email-container{
+    display:flex;
+    
+}
+.name-email-container input{
+    display:flex;
+    flex-direction: column;
+    width:44%;
+   
+}
+.Form-wrapper input[type="text"] {
+  
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #515354
+}
+
+.Form-wrapper textarea {
+    width: 94%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #515354;
+    resize: none;
+}
+
+.Form-wrapper input[type="tel"] {
+    width: 44%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #515354
+}
+
+.Form-wrapper select {
+    width: 44%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #515354
+}
+
+.Form-wrapper input[type="submit"] {
+    color: #1e1f20;
+    font-weight: bold;
+    cursor: pointer;
+    width: 44%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #515354;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(83, 91, 94, 0.169) inset;
+}
+
+.Form-wrapper input[type="submit"]:hover {
+    box-shadow: 0 0 20px rgba(6, 6, 6, 0.2) inset;
+}
+
+.Form-wrapper img {
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    margin: 15px auto;
+}
+
+.Form-wrapper input:focus,
+select:focus,
+textarea:focus {
+    border: 1px solid #003145;
+}
+.Form-wrapper .error {
+    color:rgb(150, 2, 2);
+    font-size:xx-small;
+}
+
+@media screen and (min-width: 600px) {
+    input {width:100%}
+}
+    

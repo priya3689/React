@@ -5,11 +5,19 @@ export const Home = () => {
     <div className="flex  text-3xl flex-row  justify-around   border border-red-500">
       <div className="cursor-pointer" onClick={() => navigate("/todo")}>
         {" "}
-        todo
+        Todo
       </div>
       <div className="cursor-pointer" onClick={() => navigate("/counter")}>
         {" "}
         Counter
+      </div>
+      <div className="cursor-pointer" onClick={() => navigate("/loadData")}>
+        {" "}
+        Load Data
+      </div>
+      <div className="cursor-pointer" onClick={() => navigate("/form")}>
+        {" "}
+        Form
       </div>
     </div>
   );
