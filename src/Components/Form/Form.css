@@ -2,7 +2,8 @@
 *::after,
 *::before {
     margin: 0;
-    padding: 0
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .Form-wrapper {
@@ -13,7 +14,8 @@
     width: 380px;
     border: 1px solid #CCC;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) inset;
-    color: #515354
+    color: #515354;
+    
 }
 
 .Form-wrapper h1 {
@@ -24,38 +26,35 @@
 }
 .name-email-container{
     display:flex;
+    gap:10px;
     
 }
 .name-email-container input{
-    display:flex;
-    flex-direction: column;
-    width:44%;
-   
-}
+    
+   width:100%
+} 
 .Form-wrapper input[type="text"] {
   
     padding: 10px;
-    margin: 10px;
     border: 1px solid #515354
 }
 
 .Form-wrapper textarea {
-    width: 94%;
+    width:100%;
     padding: 10px;
-    margin: 10px;
     border: 1px solid #515354;
     resize: none;
 }
 
 .Form-wrapper input[type="tel"] {
-    width: 44%;
+ 
     padding: 10px;
     margin: 10px;
     border: 1px solid #515354
 }
 
 .Form-wrapper select {
-    width: 44%;
+  
     padding: 10px;
     margin: 10px;
     border: 1px solid #515354
@@ -65,7 +64,7 @@
     color: #1e1f20;
     font-weight: bold;
     cursor: pointer;
-    width: 44%;
+ 
     padding: 10px;
     margin: 10px;
     border: 1px solid #515354;
