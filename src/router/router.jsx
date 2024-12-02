@@ -4,15 +4,24 @@ import Counter from "../Components/Counter";
 import Todo from "../Components/Todo";
 import LoadData from "../Components/LoadData";
 import Form from "../Components/Form/Form";
+import User from "../Components/User";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  
   },
   {
     path: "/counter",
     element: <Counter />,
+
+    children:[
+      {
+        path:"/counterone",
+        element:<div>sameer</div>
+      }
+    ]
   },
   {
     path: "/todo",
@@ -23,8 +32,12 @@ const router = createBrowserRouter([
     element: <LoadData />,
   },
   {
-    path: "/form",
+    path: "/form/:id",
     element: <Form />,
+  },
+  { 
+    path:"/user",
+    element:<User/>
   }
 ]);
 

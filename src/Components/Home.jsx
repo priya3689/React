@@ -15,10 +15,14 @@ export const Home = () => {
         {" "}
         Load Data
       </div>
-      <div className="cursor-pointer" onClick={() => navigate("/form")}>
+      <div className="cursor-pointer" onClick={() => navigate(`/form/${2}`)}>
         {" "}
         Form
-      </div>
+       </div>
     </div>
+    
   );
+
+
+
 };

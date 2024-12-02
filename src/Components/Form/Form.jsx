@@ -1,12 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Form.css";
 import reactforform from "./reactforform.png";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useContext } from "react";
+import { formContext } from "../../context/FormDataContext";
 
 function Form() {
+  const { setFormData } = useContext(formContext);
+
+  const { id } = useParams();
+
+  console.log(id, "==my id");
+
   const schema = yup.object().shape({
     name: yup
       .string()
@@ -42,13 +50,16 @@ function Form() {
       
     } */
 
+  const handleFormValues = (data) => {
+    setFormData(data);
+    navigate("/user");
+  };
+
   return (
-    
     <div className="Form-wrapper">
-     
       <h1>Enter your Details</h1>
       <img src={reactforform} alt="ReactLogo" />
-      <form onSubmit={handleSubmit((d) => console.log(d))}>
+      <form onSubmit={handleSubmit((data) => handleFormValues(data))}>
         <div className="name-email-container">
           <div>
             <input
@@ -69,7 +80,7 @@ function Form() {
             {errors.email && <p className="error">{errors.email.message}</p>}
           </div>
         </div>
-        <div>
+        <div className="aboutContact">
           <textarea
             cols="10"
             rows="3"
@@ -77,13 +88,17 @@ function Form() {
             placeholder="About You"
             {...register("aboutu")}
           ></textarea>
+
+          <div>
+            <input
+              type="tel"
+              name="contact"
+              placeholder="Contact No"
+              {...register("contact")}
+            />
+          </div>
         </div>
-        <input
-          type="tel"
-          name="contact"
-          placeholder="Contact No"
-          {...register("contact")}
-        />
+
         <select name="country" placeholder="Country" {...register("country")}>
           <option value="">Select your Country</option>
           <option value="India">India</option>
