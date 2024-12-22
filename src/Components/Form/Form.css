@@ -26,17 +26,26 @@
 .name-email-container {
   display: flex;
   gap: 10px;
+  margin-bottom: 10px;
 }
 .name-email-container input {
   width: 100%;
 }
 
 .aboutContact {
-  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+.aboutContact input{width:100%;}
+.indSubWrapper{
+  display:flex;
+  gap: 10px;
+}
+.indSubWrapper div{
+  flex-direction: column;
+}
+.indSubWrapper input {width: 100%;}
 .Form-wrapper input[type="text"] {
   padding: 10px;
   border: 1px solid #515354;
@@ -57,17 +66,18 @@
 
 .Form-wrapper select {
   padding: 10px;
-  /* margin: 10px; */
+  margin: 10px 0px;
   border: 1px solid #515354;
+  width:100%;
 }
 
 .Form-wrapper input[type="submit"] {
   color: #1e1f20;
   font-weight: bold;
   cursor: pointer;
-
+  width:100%;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0px;
   border: 1px solid #515354;
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(83, 91, 94, 0.169) inset;
@@ -91,11 +101,7 @@ textarea:focus {
 }
 .Form-wrapper .error {
   color: rgb(150, 2, 2);
-  font-size: xx-small;
+  font-size: small;
+  padding-bottom: 6px;
 }
 
-@media screen and (min-width: 600px) {
-  input {
-    width: 100%;
-  }
-}

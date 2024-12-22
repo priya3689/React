@@ -1,0 +1,14 @@
+.userComponent {
+
+    width: 50%;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) inset;
+    color: #015e8d;
+    min-height: 100px;
+
+}

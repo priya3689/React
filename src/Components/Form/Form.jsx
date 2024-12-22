@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import "./Form.css";
 import reactforform from "./reactforform.png";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -99,24 +98,32 @@ function Form() {
           </div>
         </div>
 
-        <select name="country" placeholder="Country" {...register("country")}>
-          <option value="">Select your Country</option>
-          <option value="India">India</option>
-          <option value="Qatar">Qatar</option>
-        </select>
-        {errors.country && <p className="error">{errors.country.message}</p>}
-        <input
-          type="text"
-          name="industry"
-          placeholder="Industry"
-          {...register("industry")}
-        />
-        <input
-          type="text"
-          name="favSub"
-          placeholder="Prefered Subject"
-          {...register("favSub")}
-        />
+        <div>
+          <select name="country" placeholder="Country" {...register("country")}>
+            <option value="">Select your Country</option>
+            <option value="India">India</option>
+            <option value="Qatar">Qatar</option>
+          </select>
+          {errors.country && <p className="error">{errors.country.message}</p>}
+        </div>
+        <div className="indSubWrapper">
+          <div>
+            <input
+              type="text"
+              name="industry"
+              placeholder="Industry"
+              {...register("industry")}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="favSub"
+              placeholder="Prefered Subject"
+              {...register("favSub")}
+            />
+          </div>
+        </div>
         <input type="submit" name="Submit" value="Submit" />
       </form>
       <div className="cursor-pointer mt-10" onClick={() => navigate("/")}>

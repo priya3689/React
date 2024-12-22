@@ -4,7 +4,14 @@ import Counter from "../Components/Counter";
 import Todo from "../Components/Todo";
 import LoadData from "../Components/LoadData";
 import Form from "../Components/Form/Form";
-import User from "../Components/User";
+import User from "../Components/User/User";
+import UseRefForm from "../Components/UseRefForm/UseRefForm";
+import CustomHookComp from "../Components/CustomHookComp/CustomHookComp";
+import UseMemoComp from "../Components/UseMemo/UseMemoComp";
+import { Suspense } from "react";
+import { lazy } from "react";
+import Parent from "../Components/UseCallBack/Parent";
+const SuspenseComp = lazy(() => import('../Components/Suspense/SuspenseComp'));
 
 const router = createBrowserRouter([
   {
@@ -38,6 +45,26 @@ const router = createBrowserRouter([
   { 
     path:"/user",
     element:<User/>
+  },
+  { 
+    path:"/userRef",
+    element:<UseRefForm/>
+  },
+  { 
+    path:"/customHook",
+    element:<CustomHookComp/>
+  },
+  { 
+    path:"/useMemo",
+    element:<UseMemoComp/>
+  },
+  { 
+    path:"/suspense",
+    element:<Suspense fallback={<p>Loading......................</p>}><SuspenseComp/></Suspense>
+  },
+  { 
+    path:"/useCallBack",
+    element:<Parent/>
   }
 ]);
 
